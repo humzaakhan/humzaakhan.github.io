@@ -14,7 +14,6 @@ website:
         text: CV
       - href: researchinterests.qmd
         text: Research Interests
-    
       - href: assignment2.qmd
         text: Assignment 2
       
