@@ -2,7 +2,7 @@
 title: "Assignment 2"
 ---
 
-\-\--
+-   
 
 title: "EPPS 6302: Lab01"
 
@@ -14,11 +14,11 @@ format: html
 
 editor: visual
 
-\-\--
+-   
 
-\# Basic Commands
+# Basic Commands
 
-\## Create object using the assignment operator (\\\<-, =)
+## Create object using the assignment operator (\\\<-, =)
 
 ```{r}
 
@@ -34,69 +34,69 @@ y = c(1,4,3)
 
 ```
 
-\## Using function
+## Using function
 
-\`\`\`{r}
+```{r}
 
-length(x) \# What does length() do?
+length(x) # What does length() do?
 
 length(y)
 
-\`\`\`
+```
 
-\## Using +, -, \\\*, /,\\\^ operators
+## Using +, -, \\\*, /,\\\^ operators
 
-\`\`\`{r}
+```{r}
 
 x+y
 
-ls() \# List objects in the environment
+ls() # List objects in the environment
 
-rm(x,y) \# Remove objects
+rm(x,y) # Remove objects
 
 ls()
 
-rm(list=ls()) \# Danger! What does this do? Not recommended!
+rm(list=ls()) # Danger! What does this do? Not recommended!
 
-\`\`\`
+```
 
-\## Matrix operations
+## Matrix operations
 
-\`\`\`{r}
+```{r}
 
 ?matrix
 
-x=matrix(data=c(1,2,3,4), nrow=2, ncol=2) \# Create a 2x2 matrix object
+x=matrix(data=c(1,2,3,4), nrow=2, ncol=2) # Create a 2x2 matrix object
 
 x
 
 x=matrix(c(1,2,3,4),2,2)
 
-matrix(c(1,2,3,4),2,2,byrow=TRUE) \# What about byrow=F?
+matrix(c(1,2,3,4),2,2,byrow=TRUE) # What about byrow=F?
 
-sqrt(x) \# What does x look like?
+sqrt(x) # What does x look like?
 
-x\^2
+x^2
 
-x=rnorm(50) \# Generate a vector of 50 numbers using the rnorm() function
+x=rnorm(50) # Generate a vector of 50 numbers using the rnorm() function
 
-y=x+rnorm(50,mean=50,sd=.1) \# What does rnorm(50,mean=50,sd=.1) generate?
+y=x+rnorm(50,mean=50,sd=.1) # What does rnorm(50,mean=50,sd=.1) generate?
 
-cor(x,y) \# Correlation of x and y
+cor(x,y) # Correlation of x and y
 
-set.seed(1303) \# Set the seed for Random Number Generator (RNG) to generate values that are reproducible.
+set.seed(1303) # Set the seed for Random Number Generator (RNG) to generate values that are reproducible.
 
 rnorm(50)
 
-set.seed(3) \# Try different seeds?
+set.seed(3) # Try different seeds?
 
 y=rnorm(100)
 
-\`\`\`
+```
 
-\## Simple descriptive statistics
+## Simple descriptive statistics
 
-\`\`\`{r}
+```{r}
 
 mean(y)
 
@@ -106,27 +106,27 @@ sqrt(var(y))
 
 sd(y)
 
-\`\`\`
+```
 
-\## Graphics using R Graphics (without packages)
+## Graphics using R Graphics (without packages)
 
-\`\`\`{r}
+```{r}
 
 x=rnorm(100)
 
 y=rnorm(100)
 
-plot(x,y, pch=20, col = "blue") \# Scatterplot for two numeric variables by default
+plot(x,y, pch=20, col = "blue") # Scatterplot for two numeric variables by default
 
-plot(x,y, pch=20, col = "blue",xlab="this is the x-axis",ylab="this is the y-axis",main="Plot of X vs Y") \# Add labels
+plot(x,y, pch=20, col = "blue",xlab="this is the x-axis",ylab="this is the y-axis",main="Plot of X vs Y") # Add labels
 
-pdf("Figure01.pdf") \# Save as pdf, add a path or it will be stored on the project directory
+pdf("Figure01.pdf") # Save as pdf, add a path or it will be stored on the project directory
 
-plot(x,y,pch=20, col="forestgreen") \# Try different colors?
+plot(x,y,pch=20, col="forestgreen") # Try different colors?
 
-dev.off() \# Close the file using the dev.off function
+dev.off() # Close the file using the dev.off function
 
-x=seq(1,10) \# Same as x=c(1:10)
+x=seq(1,10) # Same as x=c(1:10)
 
 x
 
@@ -138,8 +138,9 @@ x=seq(-pi,pi,length=50)
 
 y=x
 
-\`\`\`\
-\-\--
+```
+
+------------------------------------------------------------------------
 
 title: "EPPS 6323: Lab02"
 
@@ -151,59 +152,59 @@ format: html
 
 editor: visual
 
-\-\--
+------------------------------------------------------------------------
 
-\# R Programmng Basic Commands
+# R Programmng Basic Commands
 
 (Adapted from ISLR Chapter 3 Lab: Introduction to R)
 
-\## Indexing Data using \\\[\\\]
+## Indexing Data using \[\]
 
-\`\`\`{r}
+```{r}
 
 A=matrix(1:16,4,4)
 
 A
 
-A\[2,3\]
+A[2,3]
 
-A\[c(1,3),c(2,4)\]
+A[c(1,3),c(2,4)]
 
-A\[1:3,2:4\]
+A[1:3,2:4]
 
-A\[1:2,\]
+A[1:2,]
 
-A\[,1:2\]
+A[,1:2]
 
-A\[1,\]
+A[1,]
 
-A\[-c(1,3),\]
+A[-c(1,3),]
 
-A\[-c(1,3),-c(1,3,4)\]
+A[-c(1,3),-c(1,3,4)]
 
 dim(A)
 
-\`\`\`
+```
 
-\## Loading Data from GitHub
+## Loading Data from GitHub
 
-\`\`\`{r}
+```{r}
 
 Auto=read.table("https://raw.githubusercontent.com/karlho/knowledgemining/gh-pages/data/Auto.data")
 
-\# fix(Auto) \# Starting the X11 R data editor
+# fix(Auto) \# Starting the X11 R data editor
 
 Auto=read.table("https://raw.githubusercontent.com/karlho/knowledgemining/gh-pages/data/Auto.data",header=T,na.strings="?")
 
-\# fix(Auto)
+# fix(Auto)
 
 Auto=read.csv("https://raw.githubusercontent.com/karlho/knowledgemining/gh-pages/data/Auto.csv",header=T,na.strings="?")
 
-\# fix(Auto)
+# fix(Auto)
 
 dim(Auto)
 
-Auto\[1:4,\]
+Auto[1:4,]
 
 Auto=na.omit(Auto)
 
@@ -211,25 +212,25 @@ dim(Auto)
 
 names(Auto)
 
-\`\`\`
+```
 
-\## Load data from ISLR website
+## Load data from ISLR website
 
-\`\`\`{r Loaddata_from_web}
+```{r Loaddata_from_web}
 
 Auto=read.table("https://www.statlearning.com/s/Auto.data",header=T,na.strings="?")
 
 dim(Auto)
 
-\`\`\`
+```
 
-\## Additional Graphical and Numerical Summaries
+## Additional Graphical and Numerical Summaries
 
-\`\`\`{r}
+```{r}
 
-\# plot(cylinders, mpg)
+# plot(cylinders, mpg)
 
-plot(Auto\$cylinders, Auto\$mpg)
+plot(Auto$cylinders, Auto$mpg)
 
 attach(Auto)
 
@@ -255,21 +256,21 @@ hist(mpg,col=2,breaks=15)
 
 #pairs(Auto)
 
-pairs(\~ mpg + displacement + horsepower + weight + acceleration, Auto)
+pairs(~ mpg + displacement + horsepower + weight + acceleration, Auto)
 
 plot(horsepower,mpg)
 
-\# identify(horsepower,mpg,name) \# Interactive: point and click the dot to identify cases
+# identify(horsepower,mpg,name) \# Interactive: point and click the dot to identify cases
 
 summary(Auto)
 
 summary(mpg)
 
-\`\`\`
+```
 
-\## Linear Regression
+## Linear Regression
 
-\`\`\`{r}
+```{r}
 
 ptbu=c("MASS","ISLR")
 
@@ -281,21 +282,21 @@ library(MASS)
 
 library(ISLR)
 
-\# Simple Linear Regression
+# Simple Linear Regression
 
-\# fix(Boston)
+# fix(Boston)
 
 names(Boston)
 
-\# lm.fit=lm(medv\~lstat)
+# lm.fit=lm(medv\~lstat)
 
 attach(Boston)
 
-lm.fit=lm(medv\~lstat,data=Boston)
+lm.fit=lm(medv~lstat,data=Boston)
 
 attach(Boston)
 
-lm.fit=lm(medv\~lstat)
+lm.fit=lm(medv~lstat)
 
 lm.fit
 
@@ -311,7 +312,7 @@ predict(lm.fit,data.frame(lstat=(c(5,10,15))), interval="confidence")
 
 predict(lm.fit,data.frame(lstat=(c(5,10,15))), interval="prediction")
 
-\# What is the differnce between "conference" and "prediction" difference?
+# What is the differnce between "conference" and "prediction" difference?
 
 plot(lstat,medv)
 
@@ -341,17 +342,17 @@ plot(hatvalues(lm.fit))
 
 which.max(hatvalues(lm.fit))
 
-\`\`\`
+```
 
-\## Multiple Linear Regression
+## Multiple Linear Regression
 
-\`\`\`{r}
+```{r}
 
-lm.fit=lm(medv\~lstat+age,data=Boston)
+lm.fit=lm(medv~lstat+age,data=Boston)
 
 summary(lm.fit)
 
-lm.fit=lm(medv\~.,data=Boston)
+lm.fit=lm(medv~.,data=Boston)
 
 summary(lm.fit)
 
@@ -359,23 +360,23 @@ library(car)
 
 vif(lm.fit)
 
-lm.fit1=lm(medv\~.-age,data=Boston)
+lm.fit1=lm(medv~.-age,data=Boston)
 
 summary(lm.fit1)
 
-lm.fit1=update(lm.fit, \~.-age)
+lm.fit1=update(lm.fit, ~.-age)
 
-\`\`\`
+```
 
-\## Non-linear Transformations of the Predictors
+## Non-linear Transformations of the Predictors
 
-\`\`\`{r}
+```{r}
 
-lm.fit2=lm(medv\~lstat+I(lstat\^2))
+lm.fit2=lm(medv~lstat+I(lstat^2))
 
 summary(lm.fit2)
 
-lm.fit=lm(medv\~lstat)
+lm.fit=lm(medv~lstat)
 
 anova(lm.fit,lm.fit2)
 
@@ -383,23 +384,23 @@ par(mfrow=c(2,2))
 
 plot(lm.fit2)
 
-lm.fit5=lm(medv\~poly(lstat,5))
+lm.fit5=lm(medv~poly(lstat,5))
 
 summary(lm.fit5)
 
-summary(lm(medv\~log(rm),data=Boston))
+summary(lm(medv~log(rm),data=Boston))
 
-\`\`\`
+```
 
-\## Qualitative Predictors
+## Qualitative Predictors
 
-\`\`\`{r}
+```{r}
 
-\# fix(Carseats)
+# fix(Carseats)
 
 names(Carseats)
 
-lm.fit=lm(Sales\~.+Income:Advertising+Price:Age,data=Carseats)
+lm.fit=lm(Sales~.+Income:Advertising+Price:Age,data=Carseats)
 
 summary(lm.fit)
 
@@ -407,12 +408,12 @@ attach(Carseats)
 
 contrasts(ShelveLoc)
 
-\`\`\`
+```
 
-\## Interaction Terms (including interaction and single effects)
+## Interaction Terms (including interaction and single effects)
 
-\`\`\`{r}
+```{r}
 
-summary(lm(medv\~lstat\*age,data=Boston))
+summary(lm(medv~lstat*age,data=Boston))
 
-\`\`\`
+```

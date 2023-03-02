@@ -21,7 +21,7 @@ Word Cloud for PECA:
 
 Currently there is no dataset on cybersecurity attacks in Pakistan. This research creates the first dataset on this subject. This novel dataset uses secondhand data collected from newspaper articles, journals, and government reports. The timeline is 2008-2022. The dataset has a sample size of 38.
 
-A preview for part of the data: 
+Preview: 
 
 ![](pcadata.jpg)
 

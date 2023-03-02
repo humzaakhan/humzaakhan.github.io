@@ -6,14 +6,12 @@ website:
   title: "humzaakhan.github.io"
   navbar:
     left:
-      - href: about.qmd
+      - href: index.qmd
         text: Humza Khan
       - href: workingpapers.qmd
         text: Working Papers
       - href: Humza Khan CV.pdf
         text: CV
-      - href: researchinterests.qmd
-        text: Research Interests
       - href: assignment2.qmd
         text: Assignment 2
       
