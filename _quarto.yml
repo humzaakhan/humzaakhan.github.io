@@ -1,0 +1,23 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "humzaakhan.github.io"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Humza Khan
+      - href: workingpapers.qmd
+        text: Working Papers
+      - href: Assignment 2.pdf
+        text: Assignment 2
+
+
+format:
+  html:
+    theme: zephyr
+    css: styles.css
+    toc: true
+
+editor: visual
